@@ -30,20 +30,20 @@ const OfferSection = () => {
 
           {/* Call Buttons */}
           <div className="flex flex-col sm:flex-row justify-center gap-4">
-            <a
+            {/* <a
               href="tel:01707073790"
               className="flex items-center justify-center gap-2 bg-gradient-to-r from-blue-600 to-cyan-600 text-white px-6 py-4 rounded-2xl font-bold text-lg sm:text-xl shadow-xl shadow-blue-500/30 hover:shadow-blue-500/50 transition-all duration-300 border-2 border-white/20"
             >
               <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
               <span>অর্ডার করতে কল করুন: 01707073790</span>
-            </a>
+            </a> */}
 
             <a
-              href="tel:01331370500"
+              href="tel:+8801926923688"
               className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-teal-500 text-white px-6 py-4 rounded-2xl font-bold text-lg sm:text-xl shadow-xl shadow-green-400/30 hover:shadow-green-400/50 transition-all duration-300 border-2 border-white/20"
             >
               <Phone className="w-5 h-5 sm:w-6 sm:h-6" />
-              <span>অর্ডার করতে কল করুন: 01331370500</span>
+              <span>অর্ডার করতে কল করুন: +880 19269-23688</span>
             </a>
           </div>
 
