@@ -663,12 +663,12 @@ export const OrderForm = ({ cartItems, setCartItems }: OrderFormProps) => {
         </div>
 
         {/* Mobile Footer Note */}
-        {isMobile && (
+        {/* {isMobile && (
   <div className="mt-6 text-center text-xs text-gray-500 px-4">
     <p>📞 সাহায্যের জন্য কল করুন: 01707073790 / 01331370500</p>
     <p className="mt-1">© {new Date().getFullYear()} প্রিমিয়াম পার্টি শাড়ি। সব অধিকার সংরক্ষিত।</p>
   </div>
-)}
+)} */}
 
       </div>
     </section>
