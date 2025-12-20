@@ -6,7 +6,7 @@ function Footer() {
         <footer className="bg-gray-900 text-gray-200 py-8">
   <div className="container mx-auto px-4 text-center">
     <p className="text-sm md:text-base">
-      © {new Date().getFullYear()} Priyosaj BD | Call:{" "}
+      © {new Date().getFullYear()} My Saree Mall | Call:{" "}
       <a href="tel:+8801926923688" className="text-rose-500 hover:text-rose-400 font-semibold">
        +880 1926-923688
       </a>{" "}
