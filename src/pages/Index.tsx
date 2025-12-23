@@ -8,6 +8,7 @@ import Footer from "@/components/Footer";
 import BigSellSection from "@/components/BigSellSection";
 import KeyPointsSection from "@/components/KeyPointsSection";
 import { DeliveryPolicySection } from "@/components/DeliveryPolicySection";
+import SupportSticky from "@/components/SupportSticky";
 
 const Index = () => {
   const [cartItems, setCartItems] = useState<CartItem[]>([]);
@@ -18,7 +19,7 @@ const Index = () => {
 
   return (
     <main className="min-h-screen">
-
+<SupportSticky/>
 <BigSellSection/>
       {/* Hero */}
       {/* <HeroSection /> */}
@@ -80,7 +81,7 @@ export default Index;
 //       <footer className="bg-foreground text-background py-8">
 //         <div className="container mx-auto px-4 text-center">
 //           <p className="text-sm">
-//            © ২০২৫ tween mart all right reserved call +880-1647-629051
+//            © ২০২৫ My saree mall all right reserved call +880-1647-629051
 
 //           </p>
 //         </div>

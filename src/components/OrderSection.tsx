@@ -204,7 +204,7 @@ export const OrderForm = ({ cartItems, setCartItems }: OrderFormProps) => {
         <div className="flex items-center justify-center gap-2 md:gap-4 flex-wrap">
           <Gift className="w-5 h-5 md:w-8 md:h-8 animate-bounce" />
           <span className="font-bold text-lg md:text-4xl">
-            🎁 বেশি অর্ডারে বেশি সুযোগ! সেরা ১০ জনের একজন হতে এখনই অর্ডার করুন। 🎁
+            🎁 অফার চলছেই সীমিত সময়—শাড়ি কিনুন, সেরা ১০ জনের ১ জন হয়ে নিন মান্থলি স্পেশাল গিফট! 🎁
           </span>
           <Gift
             className="w-5 h-5 md:w-8 md:h-8 animate-bounce"
@@ -327,7 +327,7 @@ export const OrderForm = ({ cartItems, setCartItems }: OrderFormProps) => {
                       সম্পূর্ণ ঠিকানা *
                     </Label>
                     <Textarea
-                      placeholder="বাসা/ফ্ল্যাট নম্বর, রোড, এলাকা, জেলা"
+                      placeholder="হাউস নম্বর, রোড, এলাকা, জেলা, থানা, গ্রাম"
                       rows={3}
                       value={formData.address}
                       onChange={(e) =>
