@@ -5,7 +5,7 @@ declare global {
   }
 }
 
-export const GTM_ID = "GTM-KZX6XJV2";
+export const GTM_ID = "GTM-WJPMDSMM";
 
 // Initialize GTM
 export const initGTM = () => {
