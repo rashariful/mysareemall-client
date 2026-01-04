@@ -1,35 +1,41 @@
 "use client";
 
+import React, { useEffect, useState } from "react";
 import { CircleCheckBig } from "lucide-react";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import { EffectCards } from "swiper/modules";
+import axios from "axios";
 
-
-import meron from "@/assets/meron.jpg";
-import nil from "@/assets/nil.jpg";
-import black from "@/assets/black.jpg";
-import golden from "@/assets/golden.jpeg";
-import red from "@/assets/red.jpeg";
-import pink from "@/assets/pink.jpg";
-import green from "@/assets/green.jpeg";
-import white from "@/assets/white.jpeg"
-// শাড়ির সিরিয়াল ১-কালো-২ মেরুন-৩-নীল-৪-গোল্ডেন-৫-পিঙ্ক-৬ সি-গ্রীন-৭-সাদা-৮-লাল
-
-const images = [black,  meron,nil, golden, pink, green, white, red];
-
-const keyPoints = [
-  "ইন্ডিয়ান প্রিমিয়াম কোয়ালিটি নরম এবং আরামদায়ক পিওর জর্জেট পার্টি শাড়ি",
-  "শাড়ি 12 হাত, ব্লাউজের পিস আলেদা থাকবে 1 গজ",
-  "পার্টি, বিয়ে, গেট-টুগেদার সব জায়গায় একদম পারফেক্ট",
-  "বাজেটের মধ্যে প্রিমিয়াম লুক",
-  "দীর্ঘস্থায়ী রঙ ও মান",
-  "ট্রেন্ডি ডিজাইন",
-  "পণ্য হাতে পাওয়ার পরই টাকা পরিশোধ",
-  "ক্যাশ অন ডেলিভারি – সারা বাংলাদেশে",
-];
+type KeyPointData = {
+  _id: string;
+  title: string;
+  keyPoint: string[];
+  images: string[];
+  isActive: boolean;
+};
 
 const KeyPointsSection = () => {
+  const [data, setData] = useState<KeyPointData | null>(null);
+  const API_URL = import.meta.env.VITE_API_BASE_URL;
+
+  useEffect(() => {
+    const fetchKeyPoints = async () => {
+      try {
+        const response = await axios.get(`${API_URL}/keypoint`);
+        // Pick the first active entry
+        const activeEntry = response.data.data.find((item: KeyPointData) => item.isActive);
+        setData(activeEntry || null);
+      } catch (error) {
+        console.error("Error fetching key points:", error);
+      }
+    };
+
+    fetchKeyPoints();
+  }, []);
+
+  if (!data) return null; // or a loader
+
   return (
     <section className="py-14 sm:py-20 bg-gray-50">
       <div className="max-w-7xl mx-auto px-4">
@@ -39,12 +45,12 @@ const KeyPointsSection = () => {
             <div className="space-y-5">
               <div className="bg-rose-600 px-4 py-3 rounded-lg sm:rounded-xl">
                 <h2 className="text-2xl sm:text-3xl lg:text-5xl font-bold text-white text-center lg:text-left">
-                  কেন এই শাড়ি বিশেষ?
+                  {data.title}
                 </h2>
               </div>
 
               <ul className="space-y-3 sm:space-y-4">
-                {keyPoints.map((point, index) => (
+                {data.keyPoint.map((point, index) => (
                   <li
                     key={index}
                     className="flex items-start gap-3 sm:gap-4"
@@ -66,7 +72,7 @@ const KeyPointsSection = () => {
                 modules={[EffectCards]}
                 className="mySwiper"
               >
-                {images.map((img, index) => (
+                {data.images.map((img, index) => (
                   <SwiperSlide key={index}>
                     <div className="aspect-[3/4] rounded-2xl sm:rounded-3xl overflow-hidden border border-rose-200 shadow-xl">
                       <img
@@ -81,7 +87,6 @@ const KeyPointsSection = () => {
               </Swiper>
             </div>
           </div>
-          
         </div>
       </div>
     </section>

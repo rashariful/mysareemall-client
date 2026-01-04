@@ -36,6 +36,37 @@ interface OrderFormProps {
 const API_BASE_URL = import.meta.env.VITE_API_BASE_URL;
 
 export const OrderForm = ({ cartItems, setCartItems }: OrderFormProps) => {
+
+  const [promotion, setPromotion] = useState<string>("");
+
+  const getPromotion = async () => {
+    try {
+      const response = await axios.get(`${API_BASE_URL}/promotion`);
+
+      // data is an array
+      const promotions = response?.data?.data || [];
+
+      // find first active promotion
+      const activePromotion = promotions.find(
+        (item: any) => item.isActive === true
+      );
+
+      if (activePromotion) {
+        setPromotion(activePromotion.title);
+      } else {
+        setPromotion("");
+      }
+    } catch (error) {
+      console.error("Failed to fetch promotion", error);
+    }
+  };
+
+  useEffect(() => {
+    getPromotion();
+  }, []);
+
+
+
   const navigate = useNavigate();
   const sectionRef = useRef<HTMLDivElement>(null);
   const [isMobile, setIsMobile] = useState(false);
@@ -193,6 +224,7 @@ export const OrderForm = ({ cartItems, setCartItems }: OrderFormProps) => {
     );
   };
 
+ 
   return (
     <section
       ref={sectionRef}
@@ -204,7 +236,7 @@ export const OrderForm = ({ cartItems, setCartItems }: OrderFormProps) => {
         <div className="flex items-center justify-center gap-2 md:gap-4 flex-wrap">
           <Gift className="w-5 h-5 md:w-8 md:h-8 animate-bounce" />
           <span className="font-bold text-lg md:text-4xl">
-            🎁 অফার চলছেই সীমিত সময়—শাড়ি কিনুন, সেরা ১০ জনের ১ জন হয়ে নিন মান্থলি স্পেশাল গিফট! 🎁
+            🎁  {promotion} 🎁
           </span>
           <Gift
             className="w-5 h-5 md:w-8 md:h-8 animate-bounce"
@@ -662,19 +694,11 @@ export const OrderForm = ({ cartItems, setCartItems }: OrderFormProps) => {
           </div>
         </div>
 
-        {/* Mobile Footer Note */}
-        {/* {isMobile && (
-  <div className="mt-6 text-center text-xs text-gray-500 px-4">
-    <p>📞 সাহায্যের জন্য কল করুন: 01707073790 / 01331370500</p>
-    <p className="mt-1">© {new Date().getFullYear()} প্রিমিয়াম পার্টি শাড়ি। সব অধিকার সংরক্ষিত।</p>
-  </div>
-)} */}
-
       </div>
     </section>
   );
 };
-// "use client";
+
 
 // import { useState, useEffect, useRef, Dispatch, SetStateAction } from "react";
 // import axios from "axios";

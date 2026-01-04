@@ -31,12 +31,12 @@ const OfferSection = () => {
           {/* Call Buttons */}
         <div className="flex justify-center">
   <a
-    href="tel:+8801926923688"
+    href="tel:01331370500"
     className="flex items-center justify-center gap-2 bg-gradient-to-r from-green-500 to-teal-500 text-white px-4 sm:px-6 py-4 rounded-2xl font-bold text-sm sm:text-xl shadow-xl shadow-green-400/30 hover:shadow-green-400/50 transition-all duration-300 border-2 border-white/20 whitespace-nowrap"
   >
     <Phone className="w-4 h-4 sm:w-6 sm:h-6 flex-shrink-0" />
     <span>
-      অর্ডার করতে কল করুন: <span className="font-extrabold">+880 1926-923-688</span>
+      অর্ডার করতে কল করুন: <span className="font-extrabold">+880 1331-370-500</span>
     </span>
   </a>
 </div>

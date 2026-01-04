@@ -7,7 +7,7 @@ const SupportSticky = () => {
     <div className="fixed right-4 bottom-24 z-50 flex flex-col gap-3">
       {/* WhatsApp */}
       <a
-        href="https://wa.me/8801926923688"
+        href="https://wa.me/+8801331370500"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300"
@@ -18,7 +18,7 @@ const SupportSticky = () => {
 
       {/* Messenger */}
       <a
-        href="https://m.me/558226377664149"
+        href="https://m.me/104462237565506"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 bg-blue-600 hover:bg-blue-700 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300"
