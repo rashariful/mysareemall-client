@@ -7,7 +7,7 @@ const SupportSticky = () => {
     <div className="fixed right-4 bottom-24 z-50 flex flex-col gap-3">
       {/* WhatsApp */}
       <a
-        href="https://wa.me/+8801331370500"
+        href="https://wa.me/+8801926923688"
         target="_blank"
         rel="noopener noreferrer"
         className="flex items-center gap-2 bg-green-500 hover:bg-green-600 text-white px-4 py-3 rounded-full shadow-lg transition-all duration-300"
