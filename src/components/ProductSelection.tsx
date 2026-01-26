@@ -219,8 +219,7 @@ const sortedProducts = [...products].sort(
 
         <p className="text-center text-gray-600 max-w-2xl mx-auto mb-12">
           আপনার বিশেষ দিনগুলোকে আরও স্টাইলিশ ও আকর্ষণীয় করে তুলতে নিয়ে এলাম
-          প্রিমিয়াম কোয়ালিটির পার্টি শাড়ি। এখন মাত্র{" "}
-          <span className="font-bold text-rose-600">১৬৫০ টাকায়</span>।
+          প্রিমিয়াম কোয়ালিটির পার্টি শাড়ি।
         </p>
 
         {loading ? (
